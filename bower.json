@@ -1,0 +1,7 @@
+{
+  "name": "fast-blog",
+  "version": "0.0.0",
+  "dependencies": {
+    "Ribs": "~1.0.5"
+  }
+}

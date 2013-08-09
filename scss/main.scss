@@ -1,0 +1,272 @@
+@import "../components/Ribs/src/scss/Ribs.scss";
+@import "_debug.scss";
+@import "defaults.scss";
+@import url(http://fonts.googleapis.com/css?family=Lato:300,300italic,400);
+
+$base03:    #002b36;
+$base02:    #073642;
+$base01:    #586e75;
+$base00:    #657b83;
+$base0:     #839496;
+$base1:     #93a1a1;
+$base2:     #eee8d5;
+$base3:     #fdf6e3;
+$yellow:    #b58900;
+$orange:    #cb4b16;
+$red:       #dc322f;
+$magenta:   #d33682;
+$violet:    #6c71c4;
+$blue:      #268bd2;
+$cyan:      #2aa198;
+$green:     #859900;
+
+$background: #fdf6e3;
+$aside-color: $base1;
+$text-color: $base00;
+$title-color: $base01;
+$site-title-color: $blue;
+$button-color: $violet;
+$font: "Lato", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+// @include dbggrid(magenta);
+// @include dbgshow(magenta);
+body {
+  background-color: $background;
+}
+
+.circle-face {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  background-size: 100%;
+  box-shadow: inset 0 0 10px $background;
+  background-image: url(file:///Users/bkase/play/fast-blog/hat-blog.jpg);
+  margin-bottom: 3em;
+}
+
+.side-bar {
+  h1 {
+    margin-top: 0.75em;
+    font-size: 36pt; 
+    color: $blue;
+    font-family: $font;
+    margin-bottom: 4px;
+    font-weight: bold;
+  }
+
+  h2 {
+    font-size: 14pt;
+    font-style: italic;
+    font-weight: 300;
+    color: $aside-color;
+    font-family: $font;
+    margin-bottom: 2em;
+  }
+
+  .contacts {
+    font-size: 14pt;
+    padding-left: 0px;
+    font-weight: 300;
+    color: $aside-color;
+  
+    .icons {
+      padding-right: 1.0em;
+      display: inline-block;
+    }
+  }
+
+  a {
+    color: $aside-color;
+  }
+  a:visited {
+    color: $aside-color;
+  }
+  a:hover {
+    color: $aside-color;
+  }
+
+}
+
+article {
+  a {
+    color: $red;
+  }
+  a:visited {
+    color: darken($red, 10%) !important;
+  }
+  a:hover {
+    color: $red;
+  }
+
+  h1 {
+    margin-top: 1.475em;
+    font-size: 22pt;
+    font-family: $font;
+    color: $title-color;
+    margin-bottom: 9px;
+    font-weight: 400;
+  }
+  
+  // the top one needs special treatment
+  ul > li:first-child {
+    margin-top: 44px;
+  }
+
+  ul > li:last-child {
+    margin-bottom: 150px;
+  }
+
+  p {
+    font-size: 14pt;
+    line-height: 160%;
+    color: $text-color;
+    font-family: $font; 
+    font-weight: 300;
+  }
+
+  .snippet {
+    a {
+      color: $red;
+    }
+    a:visited {
+      color: darken($red, 20%);
+    }
+    a:hover {
+      color: $red;
+    }
+  }
+
+  pre {
+    padding: 15px;
+    font-family: "Deja Vu Sans Mono", Consolas, Monospace;
+
+    display: block; 
+    background-color: $base2;
+    border-radius: 10px;
+    color: $base00;
+    font-size: 12pt;
+    line-height: 120%;
+
+    .string { color: $cyan; }
+    .keyword { color: $violet;/* font-weight: bold */ }
+    .builtin { color: $base01; font-weight: bold }
+    .title { color: $base01; font-weight: bold }
+    .comment { color: $base1; }
+    .type { color: $orange; }
+    .number { color: $blue; }
+    .pun { color: $base00; }
+    .pln { color: $base00; }
+    .tag { color: $base01; font-weight: bold }
+    .attribute { color: $base01; font-weight: bold }
+    .value { color: $blue; }
+    .nocode { background-color: none; color: #000 }
+  }
+
+  $h: 55px;
+  $w: 175px;
+  .read-more {
+    display: block;
+    text-decoration: none;
+    margin-top: 25px;
+    border-radius: 3px;
+    height: $h;
+    width: $w;
+    cursor: pointer;
+    font: $font;
+    font-weight: 100;
+    letter-spacing: 2px;
+    font-size: 14pt;
+    background-color: $button-color;
+    text-align: center;
+    line-height: $h;
+    color: $background !important;
+    // box-shadow: 1px 1px 1px darken($background, 22%);
+    transition: all 0.2s;
+  }
+
+  .read-more:hover {
+    background-color: lighten($button-color, 3%);
+  }
+
+  .read-more:active {
+    background-color: lighten($button-color, 6%);
+    box-shadow: 0px 0px 0px;
+  }
+}
+
+#footer {
+  margin-left: 0px;
+  margin-right: 0px;
+  width: 100%;
+  height: 100px;
+  background-color: $violet;
+}
+
+// Tablet Portrait size to standard 960 (devices and browsers)
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+  .side-bar {
+    .contacts {
+      .icons {
+        padding-right: 0.3em;
+      }
+    } 
+  }
+}
+
+// All Mobile Sizes (devices and browser)
+@media only screen and (max-width: 767px) {
+  .circle-face {
+    display: none;
+  }
+
+  .side-bar {
+    text-align: center;
+
+    h1 {
+      margin-top: 0em;
+      font-size: 36pt; 
+      color: $blue;
+      font-family: $font;
+      margin-bottom: -0.4em;
+      font-weight: bold;
+    }
+
+    h2 {
+      font-size: 14pt;
+      font-style: italic;
+      font-weight: 300;
+      color: $aside-color;
+      font-family: $font;
+      margin-bottom: 0em;
+      margin-top: 0em;
+    }
+
+    .contacts {
+      .github {
+        float: right;
+      }
+
+      .envelope {
+        float: left;
+      }
+
+      .icons {
+        width: 1em;
+        padding-right: 0.0em;
+      }
+    }
+
+    ul {
+      display: inline-block;
+      width: 300px;
+      margin-bottom: 0px;
+    }
+  }
+
+  article {
+    h1 {
+      margin-top: 0em;
+    }
+  }
+}
+

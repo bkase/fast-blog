@@ -1,0 +1,7 @@
+# gitignore for fast-blog
+
+css/
+.sass-cache/
+*.html
+node_modules/
+components/

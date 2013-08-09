@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>hkr.me</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+  <script src="highlight.min.js"></script>
+</head>
+<body onload="hljs.initHighlighting();">
+ <div class="container">
+  <div class="sixteen columns">
+    <!-- debug elements -->
+    <div class="one stripe"></div>
+    <div class="offset-by-one padstripe"></div>
+    <div class="offset-by-two padstripe"></div>
+    <div class="offset-by-three padstripe"></div>
+    <div class="offset-by-four padstripe"></div>
+    <div class="offset-by-five padstripe"></div>
+    <div class="offset-by-six padstripe"></div>
+    <div class="offset-by-seven padstripe"></div>
+    <div class="offset-by-eight padstripe"></div>
+    <div class="offset-by-nine padstripe"></div>
+    <div class="offset-by-ten padstripe"></div>
+    <div class="offset-by-eleven padstripe"></div>
+    <div class="offset-by-twelve padstripe"></div>
+    <div class="offset-by-thirteen padstripe"></div>
+    <div class="offset-by-fourteen padstripe"></div>
+    <div class="offset-by-fifteen padstripe"></div>
+
+    <section class="one-quarter column alpha side-bar">
+      <h1>hkr.me</h1>
+      <h2>a dating site for dogs</h2>
+      <div class="circle-face"></div>
+      <ul class="contacts">
+       <li class="envelope">
+       <span class="icons"><i class="icon-envelope"></i></span> <a href="mailto:bkase@cmu.edu">bkase@cmu.edu</a>
+        </li>
+        <li class="github">
+        <span class="icons"><i class="icon-github"></i></span> <a href="https://github.com/bkase">@bkase</a>
+        </li>
+      </ul>
+    </section>
+    <article class="three-quarters column omega">
+      {+blogpost}
+      {/blogpost}
+    </article>
+</body>
+</html>

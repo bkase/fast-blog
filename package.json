@@ -1,0 +1,22 @@
+{
+  "name": "fast-blog",
+  "version": "0.0.0",
+  "description": "Static-blog generator",
+  "main": "Gruntfile.js",
+  "dependencies": {
+    "dustfs": "~0.0.6",
+    "grunt-contrib-sass": "~0.4.1",
+    "grunt": "~0.4.1",
+    "grunt-contrib-watch": "~0.5.1",
+    "grunt-sass": "~0.6.0",
+    "grunt-shell": "~0.3.1",
+    "marked": "~0.2.9"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "",
+  "author": "Brandon Kase",
+  "license": "BSD"
+}

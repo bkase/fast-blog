@@ -1,0 +1,21 @@
+@mixin dbgshow($color) {
+  * {
+    background-color: rgba($color, 0.05);
+  }
+}
+
+@mixin dbggrid($color) {
+  .stripe {
+    background-color: rgba($color, 0.05);
+    // border: 1px solid black;
+    height: 1000px;
+    z-index: -1;
+    position: fixed;
+  }
+  .padstripe:after {
+    @extend .one;
+    @extend .stripe;
+    content: " ";
+  }
+}
+
