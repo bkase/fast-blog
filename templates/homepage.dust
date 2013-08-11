@@ -1,0 +1,11 @@
+{>"page.dust"/}
+{<blogpost}
+  <ul>
+    {#intros}
+      <li>
+        {intro|s}
+        <a href="#" class="read-more">Read More</a>
+      </li>
+    {/intros}
+  </ul>
+{/blogpost}
