@@ -1,4 +1,4 @@
-const posts = ['test.md', 'test2.md']
+const posts = ['test.md', 'test2.md', 'internship.md'];
 const marked = require("marked");
 const $ = require("cheerio");
 
@@ -17,11 +17,11 @@ posts.reverse().forEach(function(post, i) {
   }
 
   dustfs.render('a-post.dust', { compiled: html }, function(err, out) {
-    fs.writeFileSync(post.replace(/\.md/, ".html"), out);
+    fs.writeFileSync("www/" + post.replace(/\.md/, ".html"), out);
   });
 });
 
 dustfs.render('homepage.dust', { intros: mostRecent }, function(err, out) {
-  fs.writeFileSync("homepage.html", out);
+  fs.writeFileSync("www/index.html", out);
 });
 
