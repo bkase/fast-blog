@@ -4,7 +4,7 @@
     {#intros}
       <li>
         {intro|s}
-        <a href="#" class="read-more">Read More</a>
+        <a href="{href}" class="read-more">Read More</a>
       </li>
     {/intros}
   </ul>

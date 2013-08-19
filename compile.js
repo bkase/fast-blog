@@ -12,12 +12,13 @@ posts.reverse().forEach(function(post, i) {
   var html = marked(mdData.toString());
   var title = $('h1', html);
   var intro = title.next();
+  var htmlName = post.replace(/\.md/, ".html");
   if (i < 7) {
-    mostRecent.push({ intro: title.toString() + intro.toString() });
+    mostRecent.push({ intro: title.toString() + intro.toString(), href: htmlName});
   }
 
   dustfs.render('a-post.dust', { compiled: html }, function(err, out) {
-    fs.writeFileSync("www/" + post.replace(/\.md/, ".html"), out);
+    fs.writeFileSync("www/" + htmlName, out);
   });
 });
 

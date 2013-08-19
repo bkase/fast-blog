@@ -31,9 +31,9 @@
         <div class="offset-by-fifteen padstripe"></div>
 
         <section class="one-quarter column alpha side-bar">
-          <h1>hkr.me</h1>
+          <a href="index.html" class="title">hkr.me</a>
           <h2>a dating site for dogs</h2>
-          <div class="circle-face"></div>
+          <a href="index.html" class="circle-face"></a>
           <ul class="contacts">
            <li class="envelope">
            <span class="icons"><i class="icon-envelope"></i></span> <a href="mailto:bkase@cmu.edu">bkase@cmu.edu</a>
