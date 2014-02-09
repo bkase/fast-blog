@@ -1,6 +1,6 @@
 {>"page.dust"/}
 {<blogpost}
-  <ul>
+  <ul class="home-list">
     {#intros}
       <li>
         {intro|s}

@@ -30,11 +30,13 @@ $font: "Lato", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 // @include dbggrid(magenta);
 // @include dbgshow(magenta);
+html {
+  overflow-y: scroll;
+}
+
 body {
   background-color: $background;
 }
-
-
 
 .side-bar {
   .title {
@@ -111,26 +113,45 @@ article {
     margin-bottom: 9px;
     font-weight: 400;
   }
+
+  h2 {
+    font-size: 20pt;
+    font-family: $font;
+    color: $title-color;
+    font-weight: 300;
+  }
+
+  h3 {
+    font-size: 18pt;
+    font-family: $font;
+    color: $title-color;
+    font-weight: 300;
+  }
   
   // the top one needs special treatment
-  ul > li:first-child {
+  .home-list > li:first-child {
     margin-top: 43px;
   }
 
-  ul > li:last-child {
+  .home-list > li:last-child {
     margin-bottom: 150px;
   }
 
-  ul {
+  .home-list {
     padding-left: 0px;
+    list-style-type: none;
   }
 
-  p {
+  li,p {
     font-size: 14pt;
     line-height: 160%;
     color: $text-color;
     font-family: $font; 
     font-weight: 300;
+  }
+
+  ul {
+    list-style-type: disc;
   }
 
   .snippet {
@@ -143,6 +164,11 @@ article {
     a:hover {
       color: $red;
     }
+  }
+
+  code {
+    font-family: "Deja Vu Sans Mono", Consolas, Monospace;
+    font-size: 12pt;
   }
 
   pre {
