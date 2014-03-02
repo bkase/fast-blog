@@ -1,4 +1,25 @@
 # A Newer Articles
 
-Head asd jlaj sdjajsd a sjdj asjd aks jdaks jdaks dakjs dakjs akjs akjs dkajs kajs dkajs dkajs dkajs dkajs dkajs dkajs dkajs dkajs dkajs dakjs dakjs d
+This is a sample post used for debugging styles.
+
+## Subheading
+
+### Sub-sub heading
+
+#### Sub-sub-sub heading
+
+Here is an _italic_ or **bold**
+
+* This
+* is
+* a
+* list
+
+```c
+char * var;
+int main() {
+  printf("Here is some code\n");
+  return 0;
+}
+```
 
