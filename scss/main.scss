@@ -127,6 +127,13 @@ article {
     color: $title-color;
     font-weight: 300;
   }
+
+  h4 {
+    font-size: 16pt;
+    font-family: $font;
+    color: $title-color;
+    font-weight: 300;
+  }
   
   // the top one needs special treatment
   .home-list > li:first-child {
@@ -236,6 +243,11 @@ article {
       color: $background !important;
     }
   }
+
+  strong {
+    color: $text-color;
+  }
+
 }
 
 $footer-height: 2.5rem;
