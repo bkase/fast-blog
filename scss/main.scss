@@ -189,19 +189,19 @@ article {
     font-size: 12pt;
     line-height: 120%;
 
-    .string { color: $cyan; }
-    .keyword { color: $violet;/* font-weight: bold */ }
-    .builtin { color: $base01; font-weight: bold }
-    .title { color: $base01; font-weight: bold }
-    .comment { color: $base1; }
-    .type { color: $orange; }
-    .number { color: $blue; }
-    .pun { color: $base00; }
-    .pln { color: $base00; }
-    .tag { color: $base01; font-weight: bold }
-    .attribute { color: $base01; font-weight: bold }
-    .value { color: $blue; }
-    .nocode { background-color: none; color: #000 }
+    .hljs-string { color: $cyan; }
+    .hljs-keyword { color: $violet;/* font-weight: bold */ }
+    .hljs-builtin { color: $base01; font-weight: bold }
+    .hljs-title { color: $base01; font-weight: bold }
+    .hljs-comment { color: $base1; }
+    .hljs-type { color: $orange; }
+    .hljs-number { color: $blue; }
+    .hljs-pun { color: $base00; }
+    .hljs-pln { color: $base00; }
+    .hljs-tag { color: $base01; font-weight: bold }
+    .hljs-attribute { color: $base01; font-weight: bold }
+    .hljs-value { color: $blue; }
+    .hljs-nocode { background-color: none; color: #000 }
   }
 
   $h: 55px;

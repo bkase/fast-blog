@@ -1,5 +1,11 @@
-const posts = ['test.md', 'test2.md', 'internship.md'];
+const posts = ['adb-to-the-firefox-process.md', 'obligatory-blog-about-blog.md'];
 const marked = require("marked");
+marked.setOptions({
+  highlight: function (code) {
+               return require('highlight.js').highlightAuto(code).value;
+             }
+});
+
 const $ = require("cheerio");
 
 const dustfs = require("dustfs");
@@ -7,7 +13,7 @@ const fs = require("fs");
 dustfs.dirs('templates');
 
 var mostRecent = [];
-posts.reverse().forEach(function(post, i) {
+posts.forEach(function(post, i) {
   var mdData = fs.readFileSync(post);
   var html = marked(mdData.toString());
   var title = $('h1', html);

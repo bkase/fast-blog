@@ -6,9 +6,8 @@
   <title>hkr.me</title>
   <link rel="stylesheet" href="css/style.css" />
   <link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
-  <script src="highlight.min.js"></script>
 </head>
-<body onload="hljs.initHighlighting();">
+<body>
   <div class="make-footers-work">
     <div class="container">
       <div class="sixteen columns">
