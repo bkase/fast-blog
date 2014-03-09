@@ -1,4 +1,4 @@
-const posts = ['adb-to-the-firefox-process.md', 'obligatory-blog-about-blog.md'];
+const posts = ['exploiting-temporal-locality-with-zsh.md', 'adb-to-the-firefox-process.md', 'obligatory-blog-about-blog.md'];
 const marked = require("marked");
 marked.setOptions({
   highlight: function (code) {
