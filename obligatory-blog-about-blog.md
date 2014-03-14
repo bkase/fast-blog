@@ -21,7 +21,7 @@ On the other side, post composition should be:
 
 ## Frontend Design and Implementation
 
-The first thing I did was pick [Solarized](http://ethanschoonover.com/solarized) for the color pallete -- I tweaked the background color to be slightly lighter -- and use [Lato](https://www.google.com/fonts/specimen/Lato) for the typeface. In my opinion, Lato looks best with a very light weight, so I went with that as well. Additonally, I feel that the default font-size is way too small on many articles I read (requiring zoom), so I like a larger font-size: all Lato content is at least 14pt. I picked Solarized and Lato because in my opinion, they are both beautiful.
+The first thing I did was pick [Solarized](http://ethanschoonover.com/solarized) for the color palette -- I tweaked the background color to be slightly lighter -- and use [Lato](https://www.google.com/fonts/specimen/Lato) for the typeface. In my opinion, Lato looks best with a very light weight, so I went with that as well. Additonally, I feel that the default font-size is way too small on many articles I read (requiring zoom), so I like a larger font-size: all Lato content is at least 14pt. I picked Solarized and Lato because in my opinion, they are both beautiful.
 
 My friend, Dillon Grove, helped me design the site in Photoshop. He stressed to me the importants of aligning the baseline of sidebar and article text content. Even a couple pixels does really make a difference between a website that looks "good" and one that looks off. Together we came up with a nice minimal blog design:
 
@@ -32,7 +32,7 @@ I used [SCSS](http://sass-lang.com/) instead of writing pure CSS. SCSS just make
 
 I used [DustJS](https://github.com/linkedin/dustjs) templates instead of writing pure HTML. Not only does this reduce the amount of boiler-plate on each page, but some sort of templating system is basically necessary in order to structure pages upon Markdown compilation. Dust makes it easy to ensure that we have the same sidebar, scripts, and styles on every blog post.
 
-For the responsive grid, I used [Ribs](http://nickpack.github.io/Ribs/), an evolution of [Skeleton](http://www.getskeleton.com/), built on SCSS. I wouldn't reccommend going with Ribs on a new project unless you grab an old stable version somewhere. When I first started working it was fine, but last time I checked, it was broken on [bower](http://bower.io/). For a lot of my development, I had to manually move around this library dependency whenever I copied my source code around.
+For the responsive grid, I used [Ribs](http://nickpack.github.io/Ribs/), an evolution of [Skeleton](http://www.getskeleton.com/), built on SCSS. I wouldn't recommend going with Ribs on a new project unless you grab an old stable version somewhere. When I first started working it was fine, but last time I checked, it was broken on [bower](http://bower.io/). For a lot of my development, I had to manually move around this library dependency whenever I copied my source code around.
 
 Syntax highlighting styles are custom -- I couldn't use default solarized themes since they clashed with the rest of the page. Here's a brief code example:
 
