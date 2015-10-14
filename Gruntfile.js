@@ -13,12 +13,15 @@ module.exports = function(grunt) {
     shell: {
       dust_compile: {
         command: 'node compile.js'
+      },
+      cp_images: {
+        command: 'mkdir -p www/images && cp images/* www/images'
       }
     },
 
     watch: {
-      files: ['scss/**/*', 'templates/*', '*.md'],
-      tasks: ['sass', 'shell:dust_compile']
+      files: ['scss/**/*', 'templates/*', '*.md', 'images/*'],
+      tasks: ['sass', 'shell:dust_compile', 'shell:cp_images']
     }
   });
 
@@ -26,5 +29,5 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-shell');
 
-  grunt.registerTask('default', ['sass']);
+  grunt.registerTask('default', ['sass', 'shell:dust_compile', 'shell:cp_images']);
 };

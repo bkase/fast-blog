@@ -18,13 +18,13 @@ The Android Debug Bridge is a commandline tool used by Android and Firefox OS de
 
 This is how ADB works at the highest level:
 
-<img src="/diagram2-@2x.png" width="620px" height="300px"/>
+<img src="images/diagram2-@2x.png" width="620px" height="300px"/>
 
 ## Motivations for libadb.js
 
 For use as an API, however, we would really prefer a system like this instead:
 
-<img src="/diagram1-@2x.png" width="620px" height="300px"/>
+<img src="images/diagram1-@2x.png" width="620px" height="300px"/>
 
 For the following reasons:
 
