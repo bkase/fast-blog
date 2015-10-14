@@ -32,14 +32,22 @@
         <section class="one-quarter column alpha side-bar">
           <a href="index.html" class="title">hkr.me</a>
           <h2>a dating site for dogs</h2>
+          <h2 class="continued">by Brandon Kase</h2>
           <a href="index.html" class="circle-face"></a>
           <ul class="contacts">
+            <li class="www">
+            <span class="icons"><i class="icon-globe"></i></span> <a href="http://bkase.me">http://bkase.me</a>
+            </li>
            <li class="envelope">
-           <span class="icons"><i class="icon-envelope"></i></span> <a href="mailto:bkase@cmu.edu">bkase@cmu.edu</a>
+           <span class="icons"><i class="icon-envelope"></i></span> <a href="mailto:brandon.kase@gmail.com">b_kase@</a>
             </li>
             <li class="github">
             <span class="icons"><i class="icon-github"></i></span> <a href="https://github.com/bkase">@bkase</a>
             </li>
+            <li class="twitter">
+            <span class="icons"><i class="icon-twitter"></i></span> <a href="https://twitter.com/bkase_">@bkase_</a>
+            </li>
+          </ul>
           </ul>
         </section>
         <article class="three-quarters column omega">

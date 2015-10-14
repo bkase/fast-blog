@@ -39,6 +39,10 @@ body {
 }
 
 .side-bar {
+  .continued {
+    margin-top: -16pt;
+  }
+
   .title {
     display: inline-block;
     text-decoration: none;
@@ -56,7 +60,7 @@ body {
     font-weight: 300;
     color: $aside-color;
     font-family: $font;
-    margin-bottom: 2em;
+    margin-bottom: 0px;
   }
 
   .circle-face {
@@ -66,7 +70,8 @@ body {
     height: 150px;
     background-size: 100%;
     box-shadow: inset 0 0 10px $background;
-    background-image: url(http://hkr.me/hat-blog.jpg);
+    background-image: url(../hat-blog.jpg);
+    margin-top: 2em;
     margin-bottom: 3em;
   }
 
@@ -77,6 +82,7 @@ body {
     color: $aside-color;
   
     .icons {
+      width: 2.0em;
       padding-right: 1.0em;
       display: inline-block;
     }
@@ -274,6 +280,7 @@ $footer-height: 2.5rem;
   .side-bar {
     .contacts {
       .icons {
+        width: 1.3em;
         padding-right: 0.3em;
       }
     }
@@ -308,12 +315,12 @@ $footer-height: 2.5rem;
     }
 
     .contacts {
-      .github {
-        float: right;
+      .www, .github {
+        float: left;
       }
 
-      .envelope {
-        float: left;
+      .envelope, .twitter {
+        float: right;
       }
 
       .icons {
