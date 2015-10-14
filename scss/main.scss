@@ -40,7 +40,7 @@ body {
 
 .side-bar {
   .continued {
-    margin-top: -16pt;
+    margin-top: -24px;
   }
 
   .title {
@@ -118,6 +118,7 @@ article {
     color: $title-color;
     margin-bottom: 9px;
     font-weight: 400;
+    line-height: 150%;
   }
 
   h2 {
@@ -307,7 +308,7 @@ $footer-height: 2.5rem;
       color: $aside-color;
       font-family: $font;
       margin-bottom: 0em;
-      margin-top: -23px;
+      margin-top: -24px;
     }
 
     .circle-face {
