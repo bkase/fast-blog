@@ -40,7 +40,7 @@ body {
 
 .side-bar {
   .continued {
-    margin-top: -24px;
+    margin-top: -23px;
   }
 
   .title {
@@ -75,17 +75,21 @@ body {
     margin-bottom: 3em;
   }
 
-  .contacts {
-    font-size: 14pt;
-    padding-left: 0px;
-    font-weight: 300;
+  .icon-container {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    width: 150px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .icons {
+    width: auto;
     color: $aside-color;
-  
-    .icons {
-      width: 2.0em;
-      padding-right: 1.0em;
-      display: inline-block;
-    }
+    font-weight: 300;
+    font-size: 20pt;
+    padding: 5px;
 
     a {
       color: $aside-color;
@@ -118,7 +122,6 @@ article {
     color: $title-color;
     margin-bottom: 9px;
     font-weight: 400;
-    line-height: 150%;
   }
 
   h2 {
@@ -312,6 +315,10 @@ $footer-height: 2.5rem;
 
     .circle-face {
       display: none;
+    }
+
+    .icon-container {
+      width: 100%;
     }
 
     .contacts {
