@@ -77,6 +77,7 @@ body {
 
   .icon-container {
     display: -webkit-box;
+    display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
     width: 150px;
@@ -89,10 +90,11 @@ body {
     color: $aside-color;
     font-weight: 300;
     font-size: 20pt;
-    padding: 5px;
+    margin: 0px 5px 0px 5px;
 
     a {
       color: $aside-color;
+      padding: 5px;
 
       &:visited {
         color: $aside-color;
@@ -280,14 +282,6 @@ $footer-height: 2.5rem;
 
 // Tablet Portrait size to standard 960 (devices and browsers)
 @media only screen and (min-width: 768px) and (max-width: 959px) {
-  .side-bar {
-    .contacts {
-      .icons {
-        width: 1.3em;
-        padding-right: 0.3em;
-      }
-    }
-  }
 }
 
 // All Mobile Sizes (devices and browser)
@@ -321,19 +315,11 @@ $footer-height: 2.5rem;
       width: 100%;
     }
 
-    .contacts {
-      .www, .github {
-        float: left;
+    .icons {
+      a {
+        padding: 5px 10px 5px 10px;
       }
-
-      .envelope, .twitter {
-        float: right;
-      }
-
-      .icons {
-        width: 1em;
-        padding-right: 0.0em;
-      }
+      margin: 0px 25px 0px 25px;
     }
 
     ul {
