@@ -20,7 +20,7 @@ posts.forEach(function(post, i) {
   var intro = title.next();
   var htmlName = post.replace(/\.md/, ".html");
   if (i < 7) {
-    mostRecent.push({ intro: title.toString() + intro.toString(), href: htmlName});
+    mostRecent.push({ intro: "<a class=\"h1-open\" href="+htmlName+">" + title.toString() + "</a>" + intro.toString(), href: htmlName});
   }
 
   dustfs.render('a-post.dust', { compiled: html }, function(err, out) {
