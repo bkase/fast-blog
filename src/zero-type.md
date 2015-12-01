@@ -4,7 +4,7 @@ Zero, the type containing zero values, has only recently entered mainstream lang
 
 ## What is it?
 
-Zero aka ((bottomsymbol)) (pronounced bottom) aka void is type that contains no values.
+Zero aka ⊥ (pronounced bottom) aka void is type that contains no values.
 
 You cannot write a terminating program (that compiles) whose control flow passes over a value of type Zero.
 
@@ -12,7 +12,7 @@ You cannot write a terminating program (that compiles) whose control flow passes
 val x: Zero = // ???
 ```
 
-It is worth noting Zero is not what many older mainstream languages call void. "Void" used in C or C-like languages actually means One or Unit. There is exactly one value contained in that type. C and it's derivatives are wrong. [Void actually means zero](linktoreputablesourceaboutzero).
+It is worth noting Zero is not what many older mainstream languages call void. "Void" used in C or C-like languages actually means One or Unit. There is exactly one value contained in that type. C and it's derivatives are wrong.
 
 ```java
 // Java using void to mean unit
@@ -106,7 +106,7 @@ That's cool, but maybe it's still a little abstract.
 
 Futures are values that are possibly not yet computed.
 
-Consider the [BrightFutures](brightfutureslink) library:
+Consider the [BrightFutures](https://github.com/Thomvis/BrightFutures) library:
 
 ```swift
 // find fib(20) in the background
@@ -129,12 +129,11 @@ By returning a `Future<T, Zero>` you've created a contract with the compiler tha
 
 Alternatively, you can create a future that _always_ fails by defining a value of type `Future<Zero, T>`.
 
-`Signal`s in [ReactiveCocoa](linktoreactivecocoa) are also built in the same way as [BrightFuture](link)'s futures.
+`Signal`s in [ReactiveCocoa](https://github.com/ReactiveCocoa/ReactiveCocoa) are also built in the same way as [BrightFuture](https://github.com/Thomvis/BrightFutures)'s futures.
 
 ## Use Zero!
 
 Zero lifts what traditionally would be a runtime assertion into a type-safe contract. Your coworkers and you yourself can never have compiling code that breaks the contract.
 
 Any abstract type whose meaning can contains something like either I return some A or some B, you can potentially use Zero.
-
 
