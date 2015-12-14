@@ -1,10 +1,23 @@
-# Kotlin
+# Kotlin, the Swift for Android
 
-We built [Roll for Android](http://tryroll.com) in [Kotlin](https://kotlinlang.org/), not Java.
+[Swift](https://developer.apple.com/swift/) is a terse functional programming language with high Objective-C interoperability used for iOS development.
 
-## What is Kotlin?
+You already know this.
 
-Kotlin is a terse swift-like functional programming language on the JVM platform with high Java interoperability. Kotlin is unique in that it's standard library and runtime are extremely small in bytes, yet very powerful. Most is eliminated at compile time (this is a contrast to [Scala](http://www.scala-lang.org/) so it can feasibly be used in memory "constrained" environments like Android (not embedded systems, but smartphones).
+Swift is better than Objective-C.
+
+You probably don't know what Kotlin is.
+
+[Kotlin](https://kotlinlang.org/) is Swift for Android.
+
+You're not using Objective-C anymore, so why are you using Java?
+
+
+We built [Roll for Android](http://tryroll.com) in [Kotlin](https://kotlinlang.org/).
+
+## What is Kotlin? Really.
+
+Kotlin is a terse swift-like functional programming language on the JVM platform with high Java interoperability. Kotlin is unique in that its standard library and runtime are extremely small in bytes, yet very powerful. Most is eliminated at compile time (this is a contrast to [Scala](http://www.scala-lang.org/) so it can feasibly be used in memory "constrained" environments like Android (not embedded systems, but smartphones).
 
 ```kotlin
 val immutableVariable = "a string"
@@ -18,13 +31,15 @@ fun inc(x: Int): Int {
 val inc: (Int) -> Int = { it + 1 }
 ```
 
-## Why Kotlin?
+## Why Kotlin and not "X"?
 
 We wanted to iterate on a lot of the software structure we came up with for our [Swift iOS app](http://tryroll.com), and for a bunch of pieces we needed a powerful type system. So rather than just stick with Java -- it's way too verbose -- we started looking at alternatives. We wanted a strong static type system. Scala has too much overhead for Android. Kotlin really stood out for us. [This document by Jake Wharton at Square](https://docs.google.com/document/d/1ReS3ep-hjxWA8kZi0YqDbEhCqTt29hG8P44aA9W0DM8/edit?hl=en&forcehl=1) made the decision easier. So we took the risk.
 
 ## Great Features
 
 * [Null type safety!](https://kotlinlang.org/docs/reference/null-safety.html)
+
+Just like in Swift, optional values are tracked through the type-system. You will not have null pointer exceptions in your Kotlin code.
 
 ```kotlin
 val x: String? = tryToGetString()
@@ -68,7 +83,7 @@ Extension functions allow you to add "methods" to objects. These are resolved st
 
 Extension functions even work on generic "primitives" like Functions or optional types.
 
-For example, we have defined monadic `bind` on options (like `>>=` in haskell, and `flatMap` in Scala) and use it all over our codebase:
+For example, we have defined monadic `bind` on options (like `if-let` in Swift if it were an expression and not a statement) and use it all over our codebase:
 
 ```kotlin
 inline fun <T, R> T?.bind(transform: (T) -> R?): R? {
@@ -144,3 +159,5 @@ The biggest issue for us is the build time. Gradle builds used to take around 5-
 Kotlin is great! The time saved due to the benefits of kotlin make up for any time lost optimizing build times.
 
 (this post was adapted from my [Hackernews comment](https://news.ycombinator.com/item?id=9947020))
+
+(aside: It is more accurate to say Swift is the Kotlin of iOS since Kotlin has existed in the open for many more years than Swift. Due to Kotlin's obscurity, however, we're forced to make the Kotlin to Swift comparison.)
