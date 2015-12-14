@@ -41,13 +41,13 @@ UI Components are views and their controllers. By composable I mean we should be
 
 ### Why not React Native?
 
-[React Native](linktoreactnative) is really cool. [React](linktoreact) is really cool. However:
+[React Native](https://facebook.github.io/react-native/) is really cool. [React](https://facebook.github.io/react/) is really cool. However:
 
-React native is not native. It is JavaScript. [There are still some things that they need to work out there](linktobadstuff). In order to build a large project in a non-statically-typed language, you and all of your team need to be EXTREMELY disciplined in order for it not to become a gigantic mess, and even then people still make mistakes. Compilers don't make mistakes, humans do. I do find [Purescript](http://www.purescript.org/)'s (react native thing see twitter) and the [Elm-react-native](https://github.com/ohanhi/elm-native) VERY interesting.
+React native is not native code. It is JavaScript. You can't _easily_ stick react components into native Android and iOS apps.
 
-React does not have Single-Atom-State out-of-the box, however something like [Redux](linktoredux) fixes this for you. React is not purely functional, but again you can fix this with various extensions.
+React does not have Single-Atom-State out-of-the box, however something like [Redux](https://github.com/rackt/redux) fixes this for you. React is not purely functional, but again you can "fix" this with various extensions.
 
-Not being designed to support Single-Atom-State leads to a framework broken by design. Hacking stuff on top of it does not prevent clients from using it in a broken way. Besides, we need something that works with native code.
+Some argue [React is not even reactive](http://staltz.com/dont-react/#/).
 
 ## Let's try and learn from the web
 
@@ -87,7 +87,7 @@ When I say stream, I'm talking about functional reactive signals or push streams
 
 Elm signals and operators are essentially a language primitive.
 
-In Cycle.js, these streams are concretely realized as [RxJS](linktorxjs) observables. RxJS is [port of Erik Meijer's Rx.NET framework](reactivex). RxSwift (and the fork, ReactiveCocoa), and RxJava are also implementations of the Rx framework.
+In Cycle.js, these streams are concretely realized as [RxJS](https://github.com/Reactive-Extensions/RxJS) observables. RxJS is [port of Erik Meijer's Rx.NET framework](http://reactivex.io/). [RxSwift](https://github.com/ReactiveX/RxSwift/) (and the spiritual fork, [ReactiveCocoa](https://github.com/ReactiveCocoa/ReactiveCocoa), and [RxJava](https://github.com/ReactiveX/RxJava) are also implementations of the Rx framework.
 
 Elm signals encourage dynamic reconfiguration of components with higher-order functions, whereas Rx observables allow dynamic reconfiguration through higher-order observables (streams containing streams).
 
@@ -99,7 +99,7 @@ Both Elm and Cycle have Single-atom app state.
 
 * Virtual View Hiearchy with diff/match/patch
 
-Unfortunately, we do not have virtual view hiearchy diffing in our imperative native UI APIs ([anvil](linktoanvil) is promising on Android and [something](linktoiosthing) is promising on iOS but those are not close to being production ready.
+Unfortunately, we do not have virtual view hiearchy diffing in our imperative native UI APIs ([anvil](https://github.com/zserge/anvil) is promising on Android and [Few](https://github.com/joshaber/Few.swift) is promising on iOS but those are not close to being production ready.
 
 * Threads
 
@@ -191,7 +191,7 @@ data class ViewState(
 
 #### Determine the model State
 
-Now we need to take a step back and consider what information we would need to determine the view state for the different possibilities in the [spec](link back up to the spec).
+Now we need to take a step back and consider what information we would need to determine the view state for the different possibilities in the spec.
 
 One of the states shows a number, so we'll need that -- and everything else is determined from the follow state between the user viewing the profile and the user whom the profile is about.
 
@@ -204,15 +204,15 @@ NOTE: `FollowState` is defined elsewhere as follows:
 (some unnecessary code elided)
 
 ```kotin
-sealed abstract class FollowState {
-  case Block
-  case Following
-  case Pending
-  case Invited
-  case Sent
-  case NotFollowing
-  case Self
-  case None
+sealed class FollowState {
+  object Block: FollowState()
+  object Following: FollowState()
+  object Pending: FollowState()
+  object Invited: FollowState()
+  object Sent: FollowState()
+  object NotFollowing: FollowState()
+  object Self: FollowState()
+  object None: FollowState()
 }
 ```
 
