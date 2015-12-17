@@ -68,7 +68,7 @@ val evenWords =
 
 * [Reified generics!](https://kotlinlang.org/docs/reference/inline-functions.html#reified-type-parameters)
 
-We've used reified generics to implement a clean API for dictionary deserialization to model data classes.
+Reified generics let you use the generic `T` in your code at runtime. For example, we've used reified generics to implement a clean API for dictionary deserialization to model data classes -- we attempt to deserialize an untyped map into some strongly typed data class of type `T` (like a `User`).
 
 ```kotlin
 private inline fun deserialize<reified T>(dict: Map<String, Any?>): T { ... }
@@ -97,7 +97,7 @@ inline fun <T, R> T?.bind(transform: (T) -> R?): R? {
 
 * [Algebraic data types and pattern matching!](https://kotlinlang.org/docs/reference/classes.html#sealed-classes)
 
-Once you've used ADTs, you can't live with out them. The compiler will enforce that you have exhaustively handled all the cases. Swift has them, and as of recently Kotlin does too.
+Algebraic data types or ADTs or Sum types or tagged unions allow you model data that can be one of several different variants. Once you've used ADTs, you can't live with out them. The compiler will enforce that you have exhaustively handled all the cases. Swift has them, and as of recently Kotlin does too.
 
 Here is an example of the model for a button that is either disabled, shows a number, or shows info about a user:
 
