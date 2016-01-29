@@ -1,14 +1,14 @@
-# Kotlin, the Swift for Android
+# Kotlin, the somewhat obscure modern Android-friendly programming language
 
 [Swift](https://developer.apple.com/swift/) is a terse functional programming language with high Objective-C interoperability used for iOS development.
 
-You already know this.
-
 Swift is better than Objective-C.
 
-You probably don't know what Kotlin is.
+You already know this.
 
-[Kotlin](https://kotlinlang.org/) is Swift for Android.
+But you probably don't know what Kotlin is.
+
+[Kotlin](https://kotlinlang.org/) is Swift for Android. [1]
 
 You're not using Objective-C anymore, so why are you using Java?
 
@@ -17,7 +17,7 @@ We built [Roll for Android](http://tryroll.com) in [Kotlin](https://kotlinlang.o
 
 ## What is Kotlin? Really.
 
-Kotlin is a terse swift-like functional programming language on the JVM platform with high Java interoperability. Kotlin is unique in that its standard library and runtime are extremely small in bytes, yet very powerful. Most is eliminated at compile time (this is a contrast to [Scala](http://www.scala-lang.org/) so it can feasibly be used in memory "constrained" environments like Android (not embedded systems, but smartphones).
+Kotlin is a terse swift-like functional programming language on the JVM platform with high Java interoperability. Kotlin is unique in that its standard library and runtime are extremely small in bytes, yet very powerful. Most is eliminated at compile time (in contrast to [Scala](http://www.scala-lang.org/), so it can feasibly be used in memory "constrained" environments like Android (not embedded systems, but smartphones):
 
 ```kotlin
 val immutableVariable = "a string"
@@ -33,13 +33,13 @@ val inc: (Int) -> Int = { it + 1 }
 
 ## Why Kotlin and not "X"?
 
-We wanted to iterate on a lot of the software structure we came up with for our [Swift iOS app](http://tryroll.com), and for a bunch of pieces we needed a powerful type system. So rather than just stick with Java -- it's way too verbose -- we started looking at alternatives. We wanted a strong static type system. Scala has too much overhead for Android. Kotlin really stood out for us. [This document by Jake Wharton at Square](https://docs.google.com/document/d/1ReS3ep-hjxWA8kZi0YqDbEhCqTt29hG8P44aA9W0DM8/edit?hl=en&forcehl=1) made the decision easier. So we took the risk.
+We wanted to iterate on a lot of the software structure we came up with for our [Swift iOS app](http://tryroll.com), and for a bunch of pieces we needed a powerful type-system. So rather than just stick with Java -- it's way too verbose -- we started looking at alternatives. We wanted a strong static type-system, yet the obvious choice, Scala, has too much overhead for Android. Kotlin really stood out for us. [This document by Jake Wharton at Square](https://docs.google.com/document/d/1ReS3ep-hjxWA8kZi0YqDbEhCqTt29hG8P44aA9W0DM8/edit?hl=en&forcehl=1) made the decision easier. So we took the risk.
 
 ## Great Features
 
 * [Null type safety!](https://kotlinlang.org/docs/reference/null-safety.html)
 
-Just like in Swift, optional values are tracked through the type-system. You will not have null pointer exceptions in your Kotlin code.
+In Kotlin, just like in Swift, optional values are tracked through the type-system. You will not have null pointer exceptions in your Kotlin code:
 
 ```kotlin
 val x: String? = tryToGetString()
@@ -51,11 +51,11 @@ if (x != null) {
 
 * [Lambdas can be inlined!](https://kotlinlang.org/docs/reference/inline-functions.html)
 
-An underappreciated feature (if you're targeting Android for example) is the zero overhead higher order functions on collections.
+An unappreciated feature of Kotlin (if you're targeting Android for example) is the zero overhead higher order functions on collections.
 
-In Kotlin these standard library functions are inlined and desurgared to for-loops.
+In Kotlin these standard library functions are inlined and desugared to for-loops.
 
-Thus, you can write expressive scala-like code but without all the anonymous inner class overhead (which while is negligible on servers, but is [an issue in Dalvik](http://developer.android.com/training/articles/memory.html) and possibly Android's new runtime ART [no evidence] so Android devices will be affected).
+Thus, you can write expressive scala-like code but without all the anonymous inner class overhead (which while negligible on servers, is [an issue in Dalvik](http://developer.android.com/training/articles/memory.html) and possibly Android's new runtime ART [no evidence], so Android devices will be affected):
 
 ```kotlin
 val strs = listOf("this", "is", "a", "bunch", "of", "words")
@@ -68,7 +68,7 @@ val evenWords =
 
 * [Reified generics!](https://kotlinlang.org/docs/reference/inline-functions.html#reified-type-parameters)
 
-Reified generics let you use the generic `T` in your code at runtime. For example, we've used reified generics to implement a clean API for dictionary deserialization to model data classes -- we attempt to deserialize an untyped map into some strongly typed data class of type `T` (like a `User`).
+Reified generics in Kotlin let you use the generic `T` in your code at runtime. For example, we've used reified generics to implement a clean API for dictionary deserialization to model data classes. Here, we attempt to deserialize an untyped map into some strongly typed data class of type `T` (like a `User`):
 
 ```kotlin
 private inline fun deserialize<reified T>(dict: Map<String, Any?>): T { ... }
@@ -79,7 +79,7 @@ val model = deserialize<ModelData>(modelDataDict)
 
 * [Statically resolved extension functions!](https://kotlinlang.org/docs/reference/extensions.html)
 
-Extension functions allow you to add "methods" to objects. These are resolved statically so there is no performance overhead or runtime confusion.
+Extension functions in Kotlin allow you to add "methods" to objects. These are resolved statically so there is no performance overhead or runtime confusion.
 
 Extension functions even work on generic "primitives" like Functions or optional types.
 
@@ -97,7 +97,7 @@ inline fun <T, R> T?.bind(transform: (T) -> R?): R? {
 
 * [Algebraic data types and pattern matching!](https://kotlinlang.org/docs/reference/classes.html#sealed-classes)
 
-Algebraic data types or ADTs or Sum types or tagged unions allow you model data that can be one of several different variants. Once you've used ADTs, you can't live with out them. The compiler will enforce that you have exhaustively handled all the cases. Swift has them, and as of recently Kotlin does too.
+Algebraic data types (ADTs) (also called Sum types or tagged unions) allow you to model data that can be one of several different variants. Once you've used ADTs, you can't live with out them. The compiler will enforce that you have exhaustively handled all the cases. Swift has them, and as of recently Kotlin does too.
 
 Here is an example of the model for a button that is either disabled, shows a number, or shows info about a user:
 
@@ -152,12 +152,12 @@ Android Studio's Kotlin support is fantastic (good job JetBrains!) -- it's a ple
 
 ## Build Time
 
-The biggest issue for us is the build time. Gradle builds used to take around 5-10 minutes. We invested a week of engineering time in getting a [Buck](https://buckbuild.com/) build working alongside gradle. Buck builds are 3minutes max and usually are around 45 seconds. With the most recent Android Studio update, incremental Gradle builds are back down under a minute. This is not too much longer than a pure Java app of our size would take to build.
+The biggest issue for us is the build time. Gradle builds used to take around 5-10 minutes. We invested a week of engineering time in getting a [Buck](https://buckbuild.com/) build working alongside gradle. Buck builds are 3 minutes max and usually are around 45 seconds. With the most recent Android Studio update, incremental Gradle builds are back down under a minute. This is not too much longer than a pure Java app of our size would take to build.
 
 ## Use Kotlin!
 
-Kotlin is great! The time saved due to the benefits of kotlin make up for any time lost optimizing build times.
+Kotlin is great! The time saved due to the benefits of Kotlin make up for any time lost optimizing build times.
 
-(this post was adapted from my [Hackernews comment](https://news.ycombinator.com/item?id=9947020))
+Note: This post was adapted from an earlier [HackerNews comment](https://news.ycombinator.com/item?id=9947020))
 
-(aside: It is more accurate to say Swift is the Kotlin of iOS since Kotlin has existed in the open for many more years than Swift. Due to Kotlin's obscurity, however, we're forced to make the Kotlin to Swift comparison.)
+[1] aside: It is more accurate to say Swift is the Kotlin of iOS since Kotlin has existed in the open for many more years than Swift. Due to Kotlin's obscurity, however, we're forced to make the Kotlin to Swift comparison.
