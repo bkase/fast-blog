@@ -158,6 +158,6 @@ The biggest issue for us is the build time. Gradle builds used to take around 5-
 
 Kotlin is great! The time saved due to the benefits of Kotlin make up for any time lost optimizing build times.
 
-Note: This post was adapted from an earlier [HackerNews comment](https://news.ycombinator.com/item?id=9947020))
+Note: This post was adapted from an earlier [HackerNews comment](https://news.ycombinator.com/item?id=9947020)
 
 [1] aside: It is more accurate to say Swift is the Kotlin of iOS since Kotlin has existed in the open for many more years than Swift. Due to Kotlin's obscurity, however, we're forced to make the Kotlin to Swift comparison.
