@@ -83,16 +83,11 @@ Extension functions in Kotlin allow you to add "methods" to objects. These are r
 
 Extension functions even work on generic "primitives" like Functions or optional types.
 
-For example, we have defined monadic `bind` on options (like `if-let` in Swift if it were an expression and not a statement) and use it all over our codebase:
+For example, we have defined monadic `bind` on options (like `if-let` in Swift if it were an expression and not a statement) and use it all over our codebase [2]:
 
 ```kotlin
-inline fun <T, R> T?.bind(transform: (T) -> R?): R? {
-  if (this == null) {
-    return null
-  } else {
-    return transform(this)
-  }
-}
+inline fun <T, R> T?.bind(transform: (T) -> R?): R? =
+  this?.let(transform)
 ```
 
 * [Algebraic data types and pattern matching!](https://kotlinlang.org/docs/reference/classes.html#sealed-classes)
@@ -161,3 +156,5 @@ Kotlin is great! The time saved due to the benefits of Kotlin make up for any ti
 Note: This post was adapted from an earlier [HackerNews comment](https://news.ycombinator.com/item?id=9947020)
 
 [1] aside: It is more accurate to say Swift is the Kotlin of iOS since Kotlin has existed in the open for many more years than Swift. Due to Kotlin's obscurity, however, we're forced to make the Kotlin to Swift comparison.
+
+[2] Thanks @daniil_vodopian for the terser bind definition
